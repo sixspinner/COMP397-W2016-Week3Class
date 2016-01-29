@@ -1,12 +1,12 @@
 ﻿/// <reference path = "_reference.ts" />
 
 
-
 // global variables
 var canvas:HTMLElement;
 var stage:createjs.Stage;
 
-var helloLabel:createjs.Text;
+var menu:scenes.Menu;
+//var helloLabel:createjs.Text;
 
 function init():void {
     //create reference for html canvas element
@@ -24,20 +24,12 @@ function init():void {
 }
 
 function gameLoop(event:createjs.Event):void {
-    helloLabel.rotation += 5;
+    menu.update();
     stage.update();
 }
 
 function main() {
-    console.log("Game Started...");
     
-    helloLabel = new createjs.Text("Hello World!","60px Consolas","#000000");
-    helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
-    helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
-    helloLabel.x = config.Screen.CENTER_X;
-    helloLabel.y = config.Screen.CENTER_Y;
-    
-    stage.addChild(helloLabel);
 }
 
 
